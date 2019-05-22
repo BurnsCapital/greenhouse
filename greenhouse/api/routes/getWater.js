@@ -2,7 +2,8 @@
 const { boolEntry } = require( '../database/index.js' );
 
 module.exports = (req, res) => {
-    boolEntry.find((err, docs)=> {
+    let q = boolEntry.find().sort({'lku': -1}).limit(20);
+    q.exec((err, docs)=> {
         if(!err && docs) {
             res.write(JSON.stringify({"boolEntries": docs }))
             res.end();
