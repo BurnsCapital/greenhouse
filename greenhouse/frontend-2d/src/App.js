@@ -6,6 +6,7 @@ import {Water } from './components'
 function App() {
   return (
     <div className="App">
+     <p> Hello</p>
      <Water />
      </div>
   );
